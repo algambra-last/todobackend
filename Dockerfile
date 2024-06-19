@@ -8,7 +8,7 @@ RUN apk add --no-cache bash git
 # Install build dependencies
 RUN apk add --no-cache gcc python3-dev libffi-dev musl-dev linux-headers mariadb-dev
 RUN apk add --no-cache py3-pip
-RUN pip3 install wheel
+RUN pip3 install --extra-index-url https://alpine-wheels.github.io/index wheel
 
 # Copy requirements
 COPY /src/requirements* /build/
